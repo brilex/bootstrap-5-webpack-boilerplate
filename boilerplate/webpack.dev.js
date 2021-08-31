@@ -4,12 +4,12 @@ const { merge } = require('webpack-merge');
 
 module.exports = merge(common,{
     mode: "development",
-    entry: './src/index.js',
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, "dist"),
     },
-   module: {
+   
+    module: {
         rules: [
             {
             test: /\.scss$/,
@@ -18,7 +18,11 @@ module.exports = merge(common,{
                 "css-loader", // turns css to common.js
                 "sass-loader" // turn scss to css
             ]
-         }
+         },
+        
         ],
-    } 
+    },
+     
+    
 });
+// devtool: false,
